@@ -2,10 +2,10 @@
 
 cd $GITHUB_WORKSPACE
 
-exec 5>&1
-GOFMT_OUTPUT="$(gofmt -l -w "$1" | tee /dev/fd/5)"
+GOFMT_OUTPUT="$(gofmt -l "$1" 2>&1)"
 
-if [ -n $GOFMT_OUTPUT ]; then
+if [ -n "$GOFMT_OUTPUT" ]; then
+  echo "All the following files are not correctly formatted"
   echo "${GOFMT_OUTPUT}"
 
   exit 1
