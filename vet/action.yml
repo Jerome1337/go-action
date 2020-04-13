@@ -1,0 +1,12 @@
+name: 'Govet'
+author: 'Jérôme Pogeant'
+description: 'Check potential bug using govet'
+outputs:
+  govet-output:
+    description: 'The govet output if the command fail'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'check-circle'
+  color: 'green'
