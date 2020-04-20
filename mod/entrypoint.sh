@@ -4,6 +4,8 @@ cd $GITHUB_WORKSPACE
 
 GO_MOD_OUPUT="$(go mod tidy -v 2>&1)"
 
+echo $GO_MOD_OUPUT
+
 if [[ $GO_MOD_OUPUT == *"unused"* ]]; then
   echo "${GO_MOD_OUPUT}"
 
